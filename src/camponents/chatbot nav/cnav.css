@@ -1,0 +1,193 @@
+* {
+  box-sizing: border-box; /* Include padding and border in element's total width/height */
+}
+
+html, body {
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  width: 100%; /* Ensure full width */
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+
+/* src/Navbar.css */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: white;
+  color: #333;
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  left: 0;
+  top: 0;;
+}
+
+.navbar-brand {
+  font-size: 24px;
+  cursor: pointer;
+  
+}
+
+.navbar-brand a{
+  text-decoration: none;
+  color: #333;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+
+.navbar-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar-profile {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.profile-icon {
+  width: 30px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Dropdown Styles */
+.dropdown {
+  position: absolute;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  right: 10px; /* Position to the right */
+  margin-top: 190px; /* Space below the profile icon */
+  padding-left: 30px;
+  padding-right: 30px;
+  z-index: 20; /* Ensure it is above other elements */
+  opacity: 0; /* Start hidden */
+  transform: translateY(-40px); /* Start slightly above */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
+  visibility: hidden; /* Prevent interaction when hidden */
+}
+
+.dropdown.open {
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Move to original position */
+  visibility: visible; /* Allow interaction */
+}
+
+.dropdown a {
+  display: block; /* Make links block elements */
+  padding: 10px 15px; /* Add padding for clickable area */
+  color: #333;
+  text-decoration: none;
+}
+
+.dropdown a:hover {
+  background-color: #999; /* Change background on hover */
+}
+
+
+.nav-button {
+  background: none; /* Remove default button styling */
+  border: none; /* Remove border */
+  color: #333; /* Button text color */
+  cursor: pointer; /* Pointer on hover */
+  display: flex; /* Align icon */
+  align-items: center; /* Center icon vertically */
+}
+
+.nav-icon {
+  margin-right: 5px; /* Space between icon and button text */
+  font-size: 20px;
+  color: #333;
+}
+
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .navbar-links {
+    display: none; /* Hide links by default on smaller screens */
+    flex-direction: column; /* Stack links vertically */
+    position: absolute;
+    background-color: white;
+    top: 50px; /* Position below the navbar */
+    right: 0;
+    width: 100%;
+    z-index: 1;
+    
+  }
+
+  .navbar-links.open {
+    display: flex; /* Show links when the menu is open */
+  }
+
+  .navbar-profile {
+    position: relative; /* Allow dropdown to position correctly */
+    cursor: pointer; /* Show pointer on hover */
+    display: flex;
+    align-items: center; /* Center the profile icon */
+    
+  }
+
+  /* Dropdown Styles */
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  align-items: center;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 50%;
+  left: 25%; /* Position to the right */
+  margin-top: 190px; /* Space below the profile icon */
+  z-index: 20; /* Ensure it is above other elements */
+  opacity: 0; /* Start hidden */
+  transform: translateY(-50px); /* Start slightly above */
+  
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
+  visibility: hidden; /* Prevent interaction when hidden */
+  padding-left: 40px;
+  padding-right: 40px;
+
+}
+
+.dropdown.open {
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Move to original position */
+  visibility: visible; /* Allow interaction */
+}
+
+.dropdown a {
+  display: block; /* Make links block elements */
+  padding: 10px 15px; /* Add padding for clickable area */
+  color: #333;
+  text-align: center;
+  text-decoration: none;
+}
+
+.dropdown a:hover {
+  background-color: #555; /* Change background on hover */
+}
+
+
+  .hamburger {
+    display: block; /* Show hamburger icon on mobile */
+  }
+}
+

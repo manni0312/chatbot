@@ -1,0 +1,53 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px; /* Start hidden */
+  width: 250px;
+  height: 100%;
+  background-color: white;
+  color: #333;
+  transition: left 0.3s ease;
+  padding: 20px;
+  z-index: 10;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar.open {
+  left: 0; /* Show sidebar */
+}
+
+.close-button {
+  background: none;
+  border: none;
+  color: #333;
+  font-size: 24px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+
+
+.chat-history {
+  max-height: 700px; /* Adjust height as needed */
+  overflow-y: auto;  /* Enable vertical scrolling */
+}
+
+.chat-history ul {
+  list-style-type: none; /* Remove bullet points */
+  padding: 0;           /* Remove default padding */
+  margin: 0;            /* Remove default margin */
+}
+
+.chat-history li {
+  margin: 8px 0;        /* Space between chat sessions */
+}
+
+.chat-history strong {
+  display: block;        /* Makes the session title stand out */
+}
+/* Responsive styles */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px; /* Adjust width on smaller screens */
+  }
+}
