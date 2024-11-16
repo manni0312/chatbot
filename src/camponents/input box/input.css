@@ -18,7 +18,56 @@
   flex: 1; /* Allow input to grow */
   padding: 10px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border.input-bar {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%); /* Center the input bar */
+    background-color: #fff; /* Background color */
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1; /* Ensure it’s above other content */
+    width: 90%; /* Full width with margin */
+    max-width: 800px; /* Max width */
+    border-radius: 10px; /* Rounded corners */
+  }
+  
+  .input-field {
+    flex: 1; /* Allow input to grow */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 0 10px; /* Space between icons and input */
+    resize: none; /* Prevent manual resizing */
+    min-height: 50px; /* Minimum height */
+    max-height: 100px; /* Maximum height */
+    font-size: 16px; /* Font size */
+  }
+  
+  .input-field:focus {
+    border-color: #333; /* Change border color on focus */
+    outline: none; /* Remove outline */
+  }
+  
+  .input-icons {
+    display: flex;
+    align-items: center;
+  }
+  
+  .icon-button {
+    background: none; /* No background */
+    border: none; /* No border */
+    cursor: pointer; /* Pointer on hover */
+    font-size: 20px; /* Icon size */
+    color: #444; /* Icon color */
+  }
+  
+  .icon-button:hover {
+    color: #555; /* Darker color on hover */
+  }
+  -radius: 5px;
   margin: 0 10px; /* Space between icons and input */
   resize: none; /* Prevent manual resizing */
   min-height: 50px; /* Minimum height */

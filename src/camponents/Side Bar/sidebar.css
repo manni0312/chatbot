@@ -1,3 +1,4 @@
+/* Sidebar styles */
 .sidebar {
   position: fixed;
   top: 0;
@@ -25,8 +26,6 @@
   margin-bottom: 20px;
 }
 
-
-
 .chat-history {
   max-height: 700px; /* Adjust height as needed */
   overflow-y: auto;  /* Enable vertical scrolling */
@@ -40,11 +39,46 @@
 
 .chat-history li {
   margin: 8px 0;        /* Space between chat sessions */
+  padding: 10px;
+  border-radius: 10px;
+  position: relative;   /* For positioning the delete button */
 }
 
 .chat-history strong {
-  display: block;        /* Makes the session title stand out */
+  display: block;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  color: #333;
 }
+
+.delete-btn {
+  background-color: transparent;
+  border: none;
+  color: #333;
+  cursor: pointer;
+  font-size: 15px;
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  padding: 5px;
+  transition: color 0.3s ease;
+}
+
+.delete-btn:hover {
+  color: #444;
+}
+
+/* Style the session messages */
+.session-messages {
+  margin-top: 10px;
+}
+
+.session-messages .message {
+  margin: 5px 0;
+  padding: 2px 0;
+  color: #555;
+}
+
 /* Responsive styles */
 @media (max-width: 768px) {
   .sidebar {
